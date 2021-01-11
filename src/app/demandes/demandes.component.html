@@ -1,0 +1,43 @@
+<br>
+<div class="row">
+  <a class="btn btn-danger" id="logout" (click)="logOut()">Logout</a>
+  <a *ngIf="userRole == 'Manager'|| userRole == 'Rh' ||userRole == 'Dg'" class="btn btn-primary" routerLink="/adduser" id="adduserbtn">Add User</a>
+</div>
+
+<div class="col-xl" >
+  <h2 class="alert alert-info" id="hello">Hello {{userRole}}</h2>
+</div>
+
+  <div class="row my-4">
+<h3>List of demandes</h3>
+<a class="btn btn-success" *ngIf="userRole == 'Employee'"  id="adddemande" routerLink="/create">Create new</a>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">N</th>
+        <th scope="col">Status</th>
+        <th scope="col">Create Date</th>
+        <th scope="col">Date Debut</th>
+        <th scope="col">Date Fin</th>
+        <th scope="col">Requested</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let demande of demandes">
+        <td scope="row">{{demande.id}}</td>
+        <td scope="row">{{demande.status}}</td>
+        <td scope="row">{{demande.dateCreation}}</td>
+        <td scope="row">{{demande.dateDebut}}</td>
+        <td scope="row">{{demande.dateFin}}</td>
+        <td scope="row">{{demande.user.username}}</td>
+        <td scope="row">
+          <a *ngIf= "userRole == 'Employee'" class="btn btn-danger" (click)="deleteDemande(demande.id)">Delete</a>
+          <a *ngIf= "userRole == 'Manager'"  class="btn btn-success" (click)="changeStatusDemande(demande)">Accepter</a>
+          <a *ngIf= "userRole == 'Rh'"  class="btn btn-success" (click)="changeStatusDemande(demande)">Valider</a>
+          <a *ngIf= "userRole == 'Dg'"  class="btn btn-success" (click)="changeStatusDemande(demande)">Approuvée</a>
+          <a *ngIf= "userRole == 'Manager'|| userRole == 'Rh' ||userRole == 'Dg'" (click)="refuseDemande(demande)" class="btn btn-danger">Refusée</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

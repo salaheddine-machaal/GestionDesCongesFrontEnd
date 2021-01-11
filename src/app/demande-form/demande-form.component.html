@@ -1,0 +1,16 @@
+<h3>Create new Demande</h3>
+<div class="col-lg-4 col-lg-offset-4">
+<form  [formGroup]="demandeForm" (ngSubmit)="onSubmit()" >
+    <div class="form-group">
+      <label for="datedebut">Date debut</label>
+      <input type="date" class="form-control" id="dateDebut" formControlName="dateDebut" >
+    </div>
+    <div class="form-group">
+        <label for="datefin">Date fin</label>
+        <input type="date" class="form-control" id="dateFin" formControlName="dateFin" >
+    </div>
+    <button type="submit" value="Save" id="addbutton" class="btn btn-success">
+        Save
+     </button>
+</form>
+</div>

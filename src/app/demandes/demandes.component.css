@@ -1,0 +1,29 @@
+#hello{
+        display: flex;
+        justify-content: center;
+        
+        
+       }
+#logout{
+    display: block;
+    width:10%;
+    margin:right;
+    position: absolute;
+    top: 0px;
+    right: 5%;
+    font-size: 15px;
+}
+#adddemande{
+    display: inline-block;
+
+}
+table{
+    width:100%;
+}
+#adduserbtn{
+    padding: 5px 5px;
+    font-size: 15px;
+    border-radius: 10px;
+    display: block;
+    width:7%;
+}

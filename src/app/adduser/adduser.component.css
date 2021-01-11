@@ -1,0 +1,19 @@
+.form-row{
+    margin-top: 5%;
+    font-size:20px ;
+}
+#save{
+    padding: 7px 10px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+#cancel{
+    padding: 7px 10px;
+    font-size: 15px;
+    border-radius: 10px;
+    margin-left: 3%;
+
+}
+input,select{
+    font-size: 70%;
+}
